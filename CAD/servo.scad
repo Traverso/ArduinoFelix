@@ -2,7 +2,7 @@ module MG995()
 {
   //Model for the TowerPro MG995 Servo
 
-  translate([-9.5,0,-29.5]) //align the shaft to 0-0
+  translate([-9.75,8.5,-30]) //align the shaft to 0-0
   union()
   {
     color("Gray")
@@ -195,7 +195,7 @@ module MG995DoubleHorn()
 module MG995WithSingleHorn(horn_angle=0)
 {
   MG995();
-  translate([0,-11,0])
+  translate([0,-3,0])
   rotate([270,horn_angle,0])
   MG995SingleHorn();
 }
@@ -203,9 +203,9 @@ module MG995WithSingleHorn(horn_angle=0)
 module MG995WithDoubleHorn(horn_angle=0)
 {
   MG995();
-  translate([0,-11,0])
+  translate([0,-3,0])
   rotate([270,horn_angle,0])
   MG995DoubleHorn();
 }
 
-MG995WithDoubleHorn(45);
+//MG995WithDoubleHorn(45);
