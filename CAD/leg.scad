@@ -76,4 +76,36 @@ module leg(hip_angle=0,knee_angle=0)
   }
 }
 
-leg(-20,65);
+module leg_mirrow(hip_angle=0,knee_angle=0)
+{
+  rotate([0,270,0])
+  MG995WithSingleHorn(hip_angle + 180);
+
+  translate([0,-8,0])
+  rotate([90,-25,0])
+  MG995DoubleHorn();
+
+  translate([-24,-5,-11])
+  rotate([0,-3,0])
+  linkage_hip();
+
+  translate([0,0,25])
+  {
+    rotate([0,270,0])
+    MG995WithSingleHorn(knee_angle + 180);
+
+  }
+
+  rotate([0,hip_angle,0])
+  {
+	  femur(0);
+
+    translate([14,-7,-54])
+    linkage_knee();
+
+    knee(knee_angle);
+
+  }
+}
+
+//leg(-20,65);
