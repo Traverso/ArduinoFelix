@@ -25,8 +25,8 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // ************** DEFAULT GEOMETRY
 #define FEMUR_SIZE 65
 #define TIBIA_SIZE 45
-#define POSE_WIDTH 16
-#define POSE_HEIGHT 20
+#define POSE_WIDTH 10
+#define POSE_HEIGHT 10
 #define POSE_ORIGIN_Y 100
 #define POSE_ORIGIN_X 0
 
@@ -112,12 +112,19 @@ int WALKS[4][4][4] =
     { 1, 2, 4, 3 }   //3 //1
   },
   {
+    { 2, 3, 1, 4 },  //4 //4 baglens
+    { 3, 4, 2, 1 },  //1 //3
+    { 4, 1, 3, 2 },  //2 //2
+    { 1, 2, 4, 3 }   //3 //1
+  },
+  /*
+  {
      { 2, 1, 3, 4 },
      { 3, 2, 4, 0 },
      { 4, 3, 0, 1 },
      { 0, 4, 1, 2 }
      //{ 1, 0, 2, 3 }
-  },
+  },*/
   {
      { 2, 3, 4, 1 },
      { 1, 2, 0, 2 },

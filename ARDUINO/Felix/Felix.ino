@@ -134,7 +134,7 @@ void MVAction()
   if(val==1) Play();
   if(val==0) Stop();
   if(val==2) StepForward();
-  if(val==3) StepBackward();
+  if(val==3) Stand(); //StepBackward();
 }
 
 void Stop()
@@ -148,11 +148,12 @@ void Play()
 
 void Stand()
 {
+  MOVING = false;
   for(int i=0;i < 4;i++)
   {            
     set_leg(i,STAND[i]);
-    if(LegNames[legs[i].index] == "FRONT RIGHT")
-    {
+    //if(LegNames[legs[i].index] == "FRONT RIGHT")
+    //{
       Serial.println("");
       Serial.print("Leg ");
       Serial.print(LegNames[legs[i].index]);
@@ -160,7 +161,7 @@ void Stand()
       Serial.print(legs[i].hipknee.hip);
       Serial.print(" knee:");
       Serial.println(legs[i].hipknee.knee);
-    }
+    //}
   }
 }
 
